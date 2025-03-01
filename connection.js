@@ -41,6 +41,8 @@ else{
 app.use(express.json());
 app.use(express.static('portfolio'))
 app.use(express.urlencoded({ extended: true }));
+app.get("/",(req,res)=>{
+    res.send("Hello")});
 
 app.post("/",(req,res)=>{
     const {name,email,phone,message}=req.body;
@@ -60,7 +62,7 @@ app.post("/",(req,res)=>{
 
 })
 const PORT=process.env.PORT||7000
-app.listen(PORT,(err)=>{
+app.listen(PORT,"0.0.0.0"(err)=>{
    if(err) console.log("Server crash")
     else{
 console.log("Server started")}
