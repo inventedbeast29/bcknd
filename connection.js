@@ -59,7 +59,8 @@ app.post("/",(req,res)=>{
    
 
 })
-app.listen(7000,(err)=>{
+const PORT=process.env.port||7000
+app.listen(PORT,(err)=>{
    if(err) console.log("Server crash")
     else{
 console.log("Server started")}
